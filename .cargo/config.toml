@@ -1,0 +1,5 @@
+[env]
+WGPU_BACKEND = "DX12"
+
+[alias]
+start = "run --features bevy/dynamic_linking"
