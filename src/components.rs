@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 
+#[allow(dead_code)]
 #[derive(Component)]
 pub struct Player {
     /// The name of the player instance
@@ -22,11 +23,6 @@ impl Direction {
     pub fn normalize(&mut self) {
         self.0 = self.0.normalize()
     }
-
-    // /// Resets the direction to ZERO
-    // pub fn reset(&mut self) {
-    //     self.0 = Vec2::ZERO;
-    // }
 }
 
 #[derive(Component)]

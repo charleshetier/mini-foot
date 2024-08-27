@@ -1,7 +1,19 @@
 use crate::components;
 use bevy::prelude::*;
 
-pub fn move_ball(
+pub fn ball_is_owned(
+    ball_owner_query: Query<&components::Player, With<components::BallOwner>>,
+) -> bool {
+    !ball_owner_query.is_empty()
+}
+
+pub fn ball_is_not_owned(
+    ball_owner_query: Query<&components::Player, With<components::BallOwner>>,
+) -> bool {
+    ball_owner_query.is_empty()
+}
+
+pub fn attach_ball_to_owner(
     ball_owner_query: Query<
         (&Transform, &components::Direction),
         (With<components::Player>, Without<components::Ball>),
@@ -22,8 +34,5 @@ pub fn move_ball(
         ball_transform.translation = ball_transform
             .translation
             .lerp(target_position, time.delta_seconds() * 10.0)
-        // ball_transform.translation.x = owner_transform.translation.x + owner_direction.0.x * 0.3;
-        // ball_transform.translation.y = 0.2;
-        // ball_transform.translation.z = owner_transform.translation.z - owner_direction.0.y * 0.3;
     }
 }
