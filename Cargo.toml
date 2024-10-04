@@ -8,6 +8,7 @@ version = "0.1.0"
 bevy = "0.14.0"
 bevy-inspector-egui = "0.25.2"
 bevy_debug_grid = "0.6.0"
+bevy_editor_pls = "0.9.0"
 
 # Enable a small amount of optimization in the dev profile.
 [profile.dev]

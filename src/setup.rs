@@ -49,10 +49,10 @@ pub fn setup(
     commands.spawn(PointLightBundle {
         point_light: PointLight {
             shadows_enabled: true,
-            intensity: 1.0,
+            intensity: 20000.0,
             ..default()
         },
-        transform: Transform::from_xyz(0.0, 8.0, 0.0),
+        transform: Transform::from_xyz(0.0, 1.7, 0.0),
         ..default()
     });
 

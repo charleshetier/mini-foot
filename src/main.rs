@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 use bevy_debug_grid::DebugGridPlugin;
+//use bevy_editor_pls::prelude::*;
 use bevy_inspector_egui::quick::WorldInspectorPlugin;
 
 mod components;
@@ -13,6 +14,7 @@ mod setup;
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
+        //.add_plugins(EditorPlugin::default())
         .add_plugins(WorldInspectorPlugin::new())
         .add_plugins(DebugGridPlugin::with_floor_grid())
         .add_systems(Startup, setup::setup)
